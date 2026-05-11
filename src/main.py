@@ -19,7 +19,7 @@ label_pfad.grid(column=0, row=2, columnspan=10, sticky=W)
 
 ttk.Button(frm, text="Quit", command=root.destroy).grid(column=3, row=10)
 ttk.Button(frm, text="Datei öffnen", command=lambda: textFileReader(label_pfad, frm)).grid(column=0, row=1)
-ttk.Button(frm, text="Wörter zählen", command=lambda: countWords()).grid(column=2, row=10)
+ttk.Button(frm, text="Wörter zählen", command=lambda: countWords(tree)).grid(column=2, row=10)
 
 # Treeview
 tree = ttk.Treeview(root, column=("c1", "c2"), show='headings', height=15)
