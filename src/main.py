@@ -23,17 +23,18 @@ ttk.Button(frm, text="Wörter zählen", command=lambda: countWords(tree)).grid(c
 
 # Treeview
 tree = ttk.Treeview(root, column=("c1", "c2"), show='headings', height=15)
+#, x=530, y=60, height=100
 
 # Scrollbar
 vsb = ttk.Scrollbar(root, orient="vertical", command=tree.yview)
-vsb.place(x=530, y=60, height=100)
+vsb.place(in_=tree, relx=1.0, relheight=1.0, bordermode="inside")
 tree.configure(yscrollcommand=vsb.set)
 
 ### listbox for directories
-tree.column("# 1", anchor=CENTER, width=50)
+tree.column("# 1", anchor=CENTER, width=150)
 tree.heading("# 1", text="Häufigkeit")
-tree.column("# 2", anchor=CENTER, width=50)
+tree.column("# 2", anchor=CENTER, width=150)
 tree.heading("# 2", text="Wort")
-tree.grid()
+tree.grid(row=2, column=5, columnspan=7, padx=30, pady=30)
 
 root.mainloop()
